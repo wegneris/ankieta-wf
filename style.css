@@ -83,3 +83,24 @@ textarea{
   .pane--right{ order:-1; height:240px; }
   h1{font-size:32px}
 }
+label {
+  display: block;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+/* 🔲 Efekt hover – lekkie podświetlenie */
+label:hover {
+  border-color: #555;
+}
+
+/* ✅ Gdy zaznaczone – całe pole robi się czarne z białym tekstem */
+input[type="radio"]:checked + label,
+input[type="checkbox"]:checked + label {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+}
