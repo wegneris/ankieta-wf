@@ -92,4 +92,33 @@ label {
   cursor: pointer;
   transition: all 0.2s ease;
 }
+label.choice {
+  display: block;
+  padding: 14px 18px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  background-color: #f4f4f4;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* ✨ Efekt hover – lekkie przyciemnienie */
+label.choice:hover {
+  background-color: #e2e2e2;
+}
+
+/* 🌑 Gdy zaznaczone → całe pole czarne */
+label.choice:has(input:checked) {
+  background-color: #000;
+  color: #fff;
+  transform: scale(1.02); /* lekki efekt kliknięcia */
+}
+
+/* 🔲 Ukrycie domyślnych kropek/ptaszków, jeśli chcesz sam efekt tła */
+label.choice input[type="radio"],
+label.choice input[type="checkbox"] {
+  accent-color: #000;
+  margin-right: 10px;
+}
 
