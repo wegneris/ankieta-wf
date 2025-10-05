@@ -1,4 +1,4 @@
-/* bramka startowa (wymagane imię) */
+/* BRAMKA STARTOWA: imię wymagane, odblokowanie formularza */
 (function initGate(){
   const form = document.getElementById('ankieta');
   const startBtn = document.getElementById('startBtn');
@@ -6,7 +6,7 @@
   const hiddenName = document.getElementById('hiddenName');
   const nameError = document.getElementById('nameError');
 
-  // blokujemy tylko kontrolki, layout i zdjęcia działają
+  // blokuj tylko kontrolki do czasu startu
   const ctrls = form.querySelectorAll('input, textarea, button');
   ctrls.forEach(el => el.disabled = true);
 
@@ -33,9 +33,10 @@
   });
 })();
 
-/* reveal on scroll + pasek postępu + mikroanimacje */
+/* REVEAL + PROGRESS + mikro-animacje wyboru */
 (function (){
-  const sections = Array.from(document.querySelectorAll('#ankieta .split'));
+  // ✅ KLUCZOWA POPRAWKA: obserwuj WSZYSTKIE .split (w tym start-screen)
+  const sections = Array.from(document.querySelectorAll('.split'));
   const progressBar = document.getElementById('progressBar');
   const progressText = document.getElementById('progressText');
   const form = document.getElementById('ankieta');
@@ -51,13 +52,13 @@
   }, {threshold: .2});
   sections.forEach(s => io.observe(s));
 
-  // mikroanimacja po wyborze
+  // mikro-animacja po wyborze
   form.addEventListener('change', (e)=>{
     const input = e.target;
     if (input.matches('input[type="radio"], input[type="checkbox"]')){
       const label = input.closest('label.choice');
       if (label){
-        label.classList.remove('pop'); // restart
+        label.classList.remove('pop'); // restart animacji
         void label.offsetWidth;
         label.classList.add('pop');
       }
@@ -65,8 +66,11 @@
     updateProgress();
   });
 
-  // postęp — sekcja zaliczona, jeśli ma jakikolwiek wybór lub treść
+  // obliczanie postępu: sekcja zaliczona, gdy coś wybrane/uzupełnione
   function isSectionAnswered(section){
+    // pomijamy ekran startowy w liczeniu
+    if (section.id === 'startScreen') return false;
+
     const radios = section.querySelectorAll('input[type="radio"]');
     const byName = {};
     radios.forEach(r => { (byName[r.name] ||= []).push(r); });
@@ -80,8 +84,10 @@
   }
 
   function updateProgress(){
-    const total = sections.length;
-    const answered = sections.filter(isSectionAnswered).length;
+    // liczymy tylko sekcje formularza
+    const formSections = sections.filter(s => s.closest('#ankieta'));
+    const total = formSections.length;
+    const answered = formSections.filter(isSectionAnswered).length;
     const pct = Math.round((answered/total)*100);
     progressBar.style.width = pct + '%';
     progressText.textContent = pct + '%';
@@ -90,7 +96,7 @@
   updateProgress();
 })();
 
-/* wysyłka + ekran podziękowania z konfetti */
+/* WYSYŁKA + ekran „Dziękujemy” z konfetti */
 (function () {
   const form = document.getElementById('ankieta');
   const statusEl = document.getElementById('status');
@@ -164,4 +170,5 @@
     }, { once:true });
   }
 })();
+
 
