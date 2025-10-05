@@ -7,11 +7,11 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- Animowane tło -->
+  <!-- delikatne animowane tło -->
   <div class="bg-anim" aria-hidden="true"></div>
 
   <div class="wrap">
-    <!-- Pasek postępu -->
+    <!-- pasek postępu -->
     <div class="progress-wrap" aria-hidden="true">
       <div class="progress-bar" id="progressBar"></div>
       <div class="progress-label"><span id="progressText">0%</span> ukończono</div>
@@ -21,12 +21,10 @@
     <section class="split reveal">
       <div class="pane pane--left">
         <div class="box">
-          <!-- LOGO -->
           <img class="logo" src="./IMG/12.png" alt="WF z Mistrzem – logo" />
           <h1>WF z Mistrzem</h1>
           <p class="lead">Szanowni Państwo, prosimy o poświęcenie kilku minut na wypełnienie poniższej ankiety.</p>
 
-          <!-- Imię przed startem -->
           <label class="start-name-label">
             Twoje imię: <span class="req">*</span>
             <input type="text" id="userName" name="user_name" placeholder="Wpisz swoje imię..." required />
@@ -42,7 +40,7 @@
       </div>
     </section>
 
-    <!-- FORMULARZ – zablokowany do czasu kliknięcia „Zacząć” -->
+    <!-- FORMULARZ -->
     <form id="ankieta" class="form locked" action="https://formspree.io/f/xjkaornw" method="POST">
       <input type="hidden" name="formularz" value="Ankieta – WF z Mistrzem" />
       <input type="hidden" name="timestamp" id="ts_input" />
@@ -235,9 +233,3 @@
   <script src="./script.js" defer></script>
 </body>
 </html>
-0
-
-
-
-
-
