@@ -7,19 +7,22 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <!-- Animowane tło -->
+  <div class="bg-anim" aria-hidden="true"></div>
+
   <div class="wrap">
+    <!-- Pasek postępu -->
+    <div class="progress-wrap" aria-hidden="true">
+      <div class="progress-bar" id="progressBar"></div>
+      <div class="progress-label"><span id="progressText">0%</span> ukończono</div>
+    </div>
 
     <!-- EKRAN STARTOWY -->
-    <section class="split">
+    <section class="split reveal">
       <div class="pane pane--left">
         <div class="box">
-          <!-- LOGO = IMG/12.png -->
-          <img
-            class="logo"
-            src="./IMG/12.png?v=1"
-            alt="WF z Mistrzem – logo"
-            onerror="console.warn('Nie znaleziono IMG/12.png (logo). Sprawdź nazwę folderu/rozszerzenie.');"
-          />
+          <!-- LOGO -->
+          <img class="logo" src="./IMG/12.png" alt="WF z Mistrzem – logo" />
           <h1>WF z Mistrzem</h1>
           <p class="lead">Szanowni Państwo, prosimy o poświęcenie kilku minut na wypełnienie poniższej ankiety.</p>
 
@@ -35,11 +38,7 @@
         </div>
       </div>
       <div class="pane pane--right">
-        <!-- hero po prawej -->
-        <img
-  src="./IMG/12.png"
-  alt="Hero"
-          />
+        <img src="./IMG/1.jpg" alt="Hero" />
       </div>
     </section>
 
@@ -50,7 +49,7 @@
       <input type="hidden" name="imie" id="hiddenName" />
 
       <!-- 1 -->
-      <section class="split">
+      <section class="split reveal" data-q="1">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">1</span>
@@ -66,17 +65,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          
-          <img
-            src="./IMG/1.jpg?v=1"
-            alt="Pytanie 1"
-            onerror="console.warn('Nie znaleziono IMG/1.jpg dla pytania 1.');"
-          />
+          <img src="./IMG/12.png" alt="Pytanie 1" />
         </div>
       </section>
 
       <!-- 2 -->
-      <section class="split">
+      <section class="split reveal" data-q="2">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">2</span>
@@ -88,12 +82,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/2.jpg" alt="Pytanie 2" onerror="console.warn('Brak IMG/2.jpg');" />
+          <img src="./IMG/2.jpg" alt="Pytanie 2" />
         </div>
       </section>
 
       <!-- 3 -->
-      <section class="split">
+      <section class="split reveal" data-q="3">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">3</span>
@@ -103,12 +97,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/3.jpg" alt="Pytanie 3" onerror="console.warn('Brak IMG/3.jpg');" />
+          <img src="./IMG/3.jpg" alt="Pytanie 3" />
         </div>
       </section>
 
       <!-- 4 -->
-      <section class="split">
+      <section class="split reveal" data-q="4">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">4</span>
@@ -120,12 +114,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/4.jpg" alt="Pytanie 4" onerror="console.warn('Brak IMG/4.jpg');" />
+          <img src="./IMG/4.jpg" alt="Pytanie 4" />
         </div>
       </section>
 
       <!-- 5 -->
-      <section class="split">
+      <section class="split reveal" data-q="5">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">5</span>
@@ -138,12 +132,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/5.jpg" alt="Pytanie 5" onerror="console.warn('Brak IMG/5.jpg');" />
+          <img src="./IMG/5.jpg" alt="Pytanie 5" />
         </div>
       </section>
 
       <!-- 6 -->
-      <section class="split">
+      <section class="split reveal" data-q="6">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">6</span>
@@ -156,12 +150,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/6.jpg" alt="Pytanie 6" onerror="console.warn('Brak IMG/6.jpg');" />
+          <img src="./IMG/6.jpg" alt="Pytanie 6" />
         </div>
       </section>
 
       <!-- 7 -->
-      <section class="split">
+      <section class="split reveal" data-q="7">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">7</span>
@@ -173,12 +167,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/7.jpg" alt="Pytanie 7" onerror="console.warn('Brak IMG/7.jpg');" />
+          <img src="./IMG/7.jpg" alt="Pytanie 7" />
         </div>
       </section>
 
       <!-- 8 -->
-      <section class="split">
+      <section class="split reveal" data-q="8">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">8</span>
@@ -190,12 +184,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/8.jpg" alt="Pytanie 8" onerror="console.warn('Brak IMG/8.jpg');" />
+          <img src="./IMG/8.jpg" alt="Pytanie 8" />
         </div>
       </section>
 
       <!-- 9 -->
-      <section class="split">
+      <section class="split reveal" data-q="9">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">9</span>
@@ -206,12 +200,12 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/9.jpg" alt="Pytanie 9" onerror="console.warn('Brak IMG/9.jpg');" />
+          <img src="./IMG/9.jpg" alt="Pytanie 9" />
         </div>
       </section>
 
       <!-- 10 -->
-      <section class="split">
+      <section class="split reveal" data-q="10">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">10</span>
@@ -222,15 +216,26 @@
           </div>
         </div>
         <div class="pane pane--right">
-          <img src="./IMG/10.jpg" alt="Pytanie 10" onerror="console.warn('Brak IMG/10.jpg');" />
+          <img src="./IMG/10.jpg" alt="Pytanie 10" />
         </div>
       </section>
     </form>
   </div>
 
+  <!-- Ekran podziękowania -->
+  <div id="thanks" class="thanks hidden" role="dialog" aria-labelledby="thanksTitle" aria-modal="true">
+    <div class="confetti" aria-hidden="true"></div>
+    <div class="card">
+      <h2 id="thanksTitle">Dziękujemy za udział! 🎉</h2>
+      <p>Twoje odpowiedzi zostały wysłane.</p>
+      <a class="btn" href="#">Wróć na górę</a>
+    </div>
+  </div>
+
   <script src="./script.js" defer></script>
 </body>
 </html>
+0
 
 
 
