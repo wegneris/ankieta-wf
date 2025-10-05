@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="pane pane--right">
-        <!-- hero po prawej: podmień na swój plik -->
+        <!-- hero po prawej -->
         <img
           src="./IMG/12.png"
           alt="Hero"
@@ -56,22 +56,22 @@
           <div class="box">
             <span class="qno">1</span>
             <h2>Kim jesteś? <span class="req">*</span></h2>
-            <label><input type="radio" name="rola" value="Uczeń / uczennica" required> Uczeń / uczennica</label>
-            <label><input type="radio" name="rola" value="Rodzic / opiekun"> Rodzic / opiekun</label>
-            <label><input type="radio" name="rola" value="Nauczyciel / trener"> Nauczyciel / trener</label>
-            <label><input type="radio" name="rola" value="Przedstawiciel szkoły / samorządu"> Przedstawiciel szkoły / samorządu</label>
-            <label class="inline">
+            <label class="choice"><input type="radio" name="rola" value="Uczeń / uczennica" required> Uczeń / uczennica</label>
+            <label class="choice"><input type="radio" name="rola" value="Rodzic / opiekun"> Rodzic / opiekun</label>
+            <label class="choice"><input type="radio" name="rola" value="Nauczyciel / trener"> Nauczyciel / trener</label>
+            <label class="choice"><input type="radio" name="rola" value="Przedstawiciel szkoły / samorządu"> Przedstawiciel szkoły / samorządu</label>
+            <label class="inline choice">
               <input type="radio" name="rola" value="Inne"> Inne:
               <input type="text" name="rola_inna" placeholder="jakie?" />
             </label>
           </div>
         </div>
         <div class="pane pane--right">
-          <!-- Pierwsze zdjęcie też = 12.png -->
+          <!-- Pierwsze zdjęcie = 12.png (poprawione) -->
           <img
-            src="./IMG/1.jpg?v=1"
+            src="./IMG/12.png?v=1"
             alt="Pytanie 1"
-            onerror="console.warn('Nie znaleziono IMG/1.jpg dla pytania 1.');"
+            onerror="console.warn('Nie znaleziono IMG/12.png dla pytania 1.');"
           />
         </div>
       </section>
@@ -82,10 +82,10 @@
           <div class="box">
             <span class="qno">2</span>
             <h2>W jakim wieku jesteś (lub Twoje dziecko / podopieczny)? <span class="req">*</span></h2>
-            <label><input type="radio" name="wiek" value="7–10" required> 7–10 lat</label>
-            <label><input type="radio" name="wiek" value="11–14"> 11–14 lat</label>
-            <label><input type="radio" name="wiek" value="15–18"> 15–18 lat</label>
-            <label><input type="radio" name="wiek" value="powyżej 18"> powyżej 18 lat</label>
+            <label class="choice"><input type="radio" name="wiek" value="7–10" required> 7–10 lat</label>
+            <label class="choice"><input type="radio" name="wiek" value="11–14"> 11–14 lat</label>
+            <label class="choice"><input type="radio" name="wiek" value="15–18"> 15–18 lat</label>
+            <label class="choice"><input type="radio" name="wiek" value="powyżej 18"> powyżej 18 lat</label>
           </div>
         </div>
         <div class="pane pane--right">
@@ -99,8 +99,8 @@
           <div class="box">
             <span class="qno">3</span>
             <h2>Czy słyszałeś/aś o projekcie „WF z Mistrzem”? <span class="req">*</span></h2>
-            <label><input type="radio" name="znajomosc" value="Tak" required> Tak</label>
-            <label><input type="radio" name="znajomosc" value="Nie"> Nie</label>
+            <label class="choice"><input type="radio" name="znajomosc" value="Tak" required> Tak</label>
+            <label class="choice"><input type="radio" name="znajomosc" value="Nie"> Nie</label>
           </div>
         </div>
         <div class="pane pane--right">
@@ -114,10 +114,10 @@
           <div class="box">
             <span class="qno">4</span>
             <h2>Jak oceniasz pomysł spotkań z mistrzem sportu w szkołach? <span class="req">*</span></h2>
-            <label><input type="radio" name="ocena" value="Bardzo dobry" required> Bardzo dobry</label>
-            <label><input type="radio" name="ocena" value="Dobry"> Dobry</label>
-            <label><input type="radio" name="ocena" value="Przeciętny"> Przeciętny</label>
-            <label><input type="radio" name="ocena" value="Niepotrzebny"> Niepotrzebny</label>
+            <label class="choice"><input type="radio" name="ocena" value="Bardzo dobry" required> Bardzo dobry</label>
+            <label class="choice"><input type="radio" name="ocena" value="Dobry"> Dobry</label>
+            <label class="choice"><input type="radio" name="ocena" value="Przeciętny"> Przeciętny</label>
+            <label class="choice"><input type="radio" name="ocena" value="Niepotrzebny"> Niepotrzebny</label>
           </div>
         </div>
         <div class="pane pane--right">
@@ -131,11 +131,11 @@
           <div class="box">
             <span class="qno">5</span>
             <h2>Co najbardziej podoba Ci się w idei projektu?</h2>
-            <label><input type="checkbox" name="zalety" value="Motywacja dzieci do ruchu"> Motywacja dzieci do ruchu</label>
-            <label><input type="checkbox" name="zalety" value="Spotkanie z mistrzem"> Możliwość spotkania z prawdziwym sportowcem</label>
-            <label><input type="checkbox" name="zalety" value="Warsztaty i treningi"> Warsztaty i treningi</label>
-            <label><input type="checkbox" name="zalety" value="Wartości"> Wartości: wytrwałość, praca, pasja</label>
-            <label class="inline">Inne: <input type="text" name="zalety_inne" placeholder="dopisz" /></label>
+            <label class="choice"><input type="checkbox" name="zalety" value="Motywacja dzieci do ruchu"> Motywacja dzieci do ruchu</label>
+            <label class="choice"><input type="checkbox" name="zalety" value="Spotkanie z mistrzem"> Możliwość spotkania z prawdziwym sportowcem</label>
+            <label class="choice"><input type="checkbox" name="zalety" value="Warsztaty i treningi"> Warsztaty i treningi</label>
+            <label class="choice"><input type="checkbox" name="zalety" value="Wartości"> Wartości: wytrwałość, praca, pasja</label>
+            <label class="inline choice">Inne: <input type="text" name="zalety_inne" placeholder="dopisz" /></label>
           </div>
         </div>
         <div class="pane pane--right">
@@ -149,11 +149,11 @@
           <div class="box">
             <span class="qno">6</span>
             <h2>Jakie formy działań byłyby najbardziej wartościowe?</h2>
-            <label><input type="checkbox" name="dzialania" value="Spotkania motywacyjne"> Spotkania motywacyjne</label>
-            <label><input type="checkbox" name="dzialania" value="Treningi sportowe"> Treningi sportowe</label>
-            <label><input type="checkbox" name="dzialania" value="Warsztaty zdrowie"> Warsztaty o zdrowym stylu życia</label>
-            <label><input type="checkbox" name="dzialania" value="Konkursy i wyzwania"> Konkursy i wyzwania sportowe</label>
-            <label><input type="checkbox" name="dzialania" value="Wspólne wydarzenia"> Wspólne wydarzenia lokalne</label>
+            <label class="choice"><input type="checkbox" name="dzialania" value="Spotkania motywacyjne"> Spotkania motywacyjne</label>
+            <label class="choice"><input type="checkbox" name="dzialania" value="Treningi sportowe"> Treningi sportowe</label>
+            <label class="choice"><input type="checkbox" name="dzialania" value="Warsztaty zdrowie"> Warsztaty o zdrowym stylu życia</label>
+            <label class="choice"><input type="checkbox" name="dzialania" value="Konkursy i wyzwania"> Konkursy i wyzwania sportowe</label>
+            <label class="choice"><input type="checkbox" name="dzialania" value="Wspólne wydarzenia"> Wspólne wydarzenia lokalne</label>
           </div>
         </div>
         <div class="pane pane--right">
@@ -167,10 +167,10 @@
           <div class="box">
             <span class="qno">7</span>
             <h2>Jak często chciał(a)byś, aby takie wydarzenia się odbywały?</h2>
-            <label><input type="radio" name="czestosc" value="Raz w roku" required> Raz w roku</label>
-            <label><input type="radio" name="czestosc" value="Kilka razy w roku"> Kilka razy w roku</label>
-            <label><input type="radio" name="czestosc" value="Co miesiąc"> Co miesiąc</label>
-            <label class="inline">Inaczej: <input type="text" name="czestosc_inna" placeholder="np. co pół roku" /></label>
+            <label class="choice"><input type="radio" name="czestosc" value="Raz w roku" required> Raz w roku</label>
+            <label class="choice"><input type="radio" name="czestosc" value="Kilka razy w roku"> Kilka razy w roku</label>
+            <label class="choice"><input type="radio" name="czestosc" value="Co miesiąc"> Co miesiąc</label>
+            <label class="inline choice">Inaczej: <input type="text" name="czestosc_inna" placeholder="np. co pół roku" /></label>
           </div>
         </div>
         <div class="pane pane--right">
@@ -184,10 +184,10 @@
           <div class="box">
             <span class="qno">8</span>
             <h2>Jaki wpływ może mieć projekt na społeczność lokalną?</h2>
-            <label><input type="checkbox" name="wplyw" value="Większa aktywność"> Większa aktywność fizyczna dzieci</label>
-            <label><input type="checkbox" name="wplyw" value="Zainteresowanie sportem"> Większe zainteresowanie sportem</label>
-            <label><input type="checkbox" name="wplyw" value="Pozytywny wizerunek"> Budowanie pozytywnego wizerunku regionu</label>
-            <label><input type="checkbox" name="wplyw" value="Wzmocnienie więzi"> Wzmocnienie więzi szkoła–rodzice–uczniowie</label>
+            <label class="choice"><input type="checkbox" name="wplyw" value="Większa aktywność"> Większa aktywność fizyczna dzieci</label>
+            <label class="choice"><input type="checkbox" name="wplyw" value="Zainteresowanie sportem"> Większe zainteresowanie sportem</label>
+            <label class="choice"><input type="checkbox" name="wplyw" value="Pozytywny wizerunek"> Budowanie pozytywnego wizerunku regionu</label>
+            <label class="choice"><input type="checkbox" name="wplyw" value="Wzmocnienie więzi"> Wzmocnienie więzi szkoła–rodzice–uczniowie</label>
           </div>
         </div>
         <div class="pane pane--right">
@@ -201,9 +201,9 @@
           <div class="box">
             <span class="qno">9</span>
             <h2>Czy chciał(a)byś wziąć udział (lub Twoje dziecko) w takim wydarzeniu?</h2>
-            <label><input type="radio" name="udzial" value="Tak" required> Tak</label>
-            <label><input type="radio" name="udzial" value="Nie"> Nie</label>
-            <label><input type="radio" name="udzial" value="Może"> Może</label>
+            <label class="choice"><input type="radio" name="udzial" value="Tak" required> Tak</label>
+            <label class="choice"><input type="radio" name="udzial" value="Nie"> Nie</label>
+            <label class="choice"><input type="radio" name="udzial" value="Może"> Może</label>
           </div>
         </div>
         <div class="pane pane--right">
@@ -232,3 +232,4 @@
   <script src="./script.js" defer></script>
 </body>
 </html>
+
