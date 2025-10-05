@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ankieta – WF z Mistrzem</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- EKRAN STARTOWY -->
+    <section class="split">
+      <div class="pane pane--left">
+        <div class="box">
+          <!-- LOGO = IMG/12.png -->
+          <img
+            class="logo"
+            src="./IMG/12.png?v=1"
+            alt="WF z Mistrzem – logo"
+            onerror="console.warn('Nie znaleziono IMG/12.png (logo). Sprawdź nazwę folderu/rozszerzenie.');"
+          />
+          <h1>WF z Mistrzem</h1>
+          <p class="lead">Szanowni Państwo, prosimy o poświęcenie kilku minut na wypełnienie poniższej ankiety.</p>
+
+          <!-- Imię przed startem -->
+          <label class="start-name-label">
+            Twoje imię: <span class="req">*</span>
+            <input type="text" id="userName" name="user_name" placeholder="Wpisz swoje imię..." required />
+          </label>
+          <div id="nameError" class="name-error"></div>
+
+          <a href="#ankieta" class="btn start-btn" id="startBtn">Zacząć</a>
+          <div class="secure-note">🔒 Secured</div>
+        </div>
+      </div>
+      <div class="pane pane--right">
+        <!-- hero po prawej: podmień na swój plik -->
+        <img
+          src="./IMG/12.png"
+          alt="Hero"
+          onerror="console.warn('Nie znaleziono IMG/12.png (hero). Jeśli go nie masz, ustaw tu inny plik.');"
+        />
+      </div>
+    </section>
+
+    <!-- FORMULARZ – zablokowany do czasu kliknięcia „Zacząć” -->
+    <form id="ankieta" class="form locked" action="https://formspree.io/f/xjkaornw" method="POST">
+      <input type="hidden" name="formularz" value="Ankieta – WF z Mistrzem" />
+      <input type="hidden" name="timestamp" id="ts_input" />
+      <input type="hidden" name="imie" id="hiddenName" />
+
+      <!-- 1 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">1</span>
+            <h2>Kim jesteś? <span class="req">*</span></h2>
+            <label><input type="radio" name="rola" value="Uczeń / uczennica" required> Uczeń / uczennica</label>
+            <label><input type="radio" name="rola" value="Rodzic / opiekun"> Rodzic / opiekun</label>
+            <label><input type="radio" name="rola" value="Nauczyciel / trener"> Nauczyciel / trener</label>
+            <label><input type="radio" name="rola" value="Przedstawiciel szkoły / samorządu"> Przedstawiciel szkoły / samorządu</label>
+            <label class="inline">
+              <input type="radio" name="rola" value="Inne"> Inne:
+              <input type="text" name="rola_inna" placeholder="jakie?" />
+            </label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <!-- Pierwsze zdjęcie też = 12.png -->
+          <img
+            src="./IMG/1.jpg?v=1"
+            alt="Pytanie 1"
+            onerror="console.warn('Nie znaleziono IMG/1.jpg dla pytania 1.');"
+          />
+        </div>
+      </section>
+
+      <!-- 2 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">2</span>
+            <h2>W jakim wieku jesteś (lub Twoje dziecko / podopieczny)? <span class="req">*</span></h2>
+            <label><input type="radio" name="wiek" value="7–10" required> 7–10 lat</label>
+            <label><input type="radio" name="wiek" value="11–14"> 11–14 lat</label>
+            <label><input type="radio" name="wiek" value="15–18"> 15–18 lat</label>
+            <label><input type="radio" name="wiek" value="powyżej 18"> powyżej 18 lat</label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/2.jpg" alt="Pytanie 2" onerror="console.warn('Brak IMG/2.jpg');" />
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">3</span>
+            <h2>Czy słyszałeś/aś o projekcie „WF z Mistrzem”? <span class="req">*</span></h2>
+            <label><input type="radio" name="znajomosc" value="Tak" required> Tak</label>
+            <label><input type="radio" name="znajomosc" value="Nie"> Nie</label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/3.jpg" alt="Pytanie 3" onerror="console.warn('Brak IMG/3.jpg');" />
+        </div>
+      </section>
+
+      <!-- 4 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">4</span>
+            <h2>Jak oceniasz pomysł spotkań z mistrzem sportu w szkołach? <span class="req">*</span></h2>
+            <label><input type="radio" name="ocena" value="Bardzo dobry" required> Bardzo dobry</label>
+            <label><input type="radio" name="ocena" value="Dobry"> Dobry</label>
+            <label><input type="radio" name="ocena" value="Przeciętny"> Przeciętny</label>
+            <label><input type="radio" name="ocena" value="Niepotrzebny"> Niepotrzebny</label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/4.jpg" alt="Pytanie 4" onerror="console.warn('Brak IMG/4.jpg');" />
+        </div>
+      </section>
+
+      <!-- 5 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">5</span>
+            <h2>Co najbardziej podoba Ci się w idei projektu?</h2>
+            <label><input type="checkbox" name="zalety" value="Motywacja dzieci do ruchu"> Motywacja dzieci do ruchu</label>
+            <label><input type="checkbox" name="zalety" value="Spotkanie z mistrzem"> Możliwość spotkania z prawdziwym sportowcem</label>
+            <label><input type="checkbox" name="zalety" value="Warsztaty i treningi"> Warsztaty i treningi</label>
+            <label><input type="checkbox" name="zalety" value="Wartości"> Wartości: wytrwałość, praca, pasja</label>
+            <label class="inline">Inne: <input type="text" name="zalety_inne" placeholder="dopisz" /></label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/5.jpg" alt="Pytanie 5" onerror="console.warn('Brak IMG/5.jpg');" />
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">6</span>
+            <h2>Jakie formy działań byłyby najbardziej wartościowe?</h2>
+            <label><input type="checkbox" name="dzialania" value="Spotkania motywacyjne"> Spotkania motywacyjne</label>
+            <label><input type="checkbox" name="dzialania" value="Treningi sportowe"> Treningi sportowe</label>
+            <label><input type="checkbox" name="dzialania" value="Warsztaty zdrowie"> Warsztaty o zdrowym stylu życia</label>
+            <label><input type="checkbox" name="dzialania" value="Konkursy i wyzwania"> Konkursy i wyzwania sportowe</label>
+            <label><input type="checkbox" name="dzialania" value="Wspólne wydarzenia"> Wspólne wydarzenia lokalne</label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/6.jpg" alt="Pytanie 6" onerror="console.warn('Brak IMG/6.jpg');" />
+        </div>
+      </section>
+
+      <!-- 7 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">7</span>
+            <h2>Jak często chciał(a)byś, aby takie wydarzenia się odbywały?</h2>
+            <label><input type="radio" name="czestosc" value="Raz w roku" required> Raz w roku</label>
+            <label><input type="radio" name="czestosc" value="Kilka razy w roku"> Kilka razy w roku</label>
+            <label><input type="radio" name="czestosc" value="Co miesiąc"> Co miesiąc</label>
+            <label class="inline">Inaczej: <input type="text" name="czestosc_inna" placeholder="np. co pół roku" /></label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/7.jpg" alt="Pytanie 7" onerror="console.warn('Brak IMG/7.jpg');" />
+        </div>
+      </section>
+
+      <!-- 8 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">8</span>
+            <h2>Jaki wpływ może mieć projekt na społeczność lokalną?</h2>
+            <label><input type="checkbox" name="wplyw" value="Większa aktywność"> Większa aktywność fizyczna dzieci</label>
+            <label><input type="checkbox" name="wplyw" value="Zainteresowanie sportem"> Większe zainteresowanie sportem</label>
+            <label><input type="checkbox" name="wplyw" value="Pozytywny wizerunek"> Budowanie pozytywnego wizerunku regionu</label>
+            <label><input type="checkbox" name="wplyw" value="Wzmocnienie więzi"> Wzmocnienie więzi szkoła–rodzice–uczniowie</label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/8.jpg" alt="Pytanie 8" onerror="console.warn('Brak IMG/8.jpg');" />
+        </div>
+      </section>
+
+      <!-- 9 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">9</span>
+            <h2>Czy chciał(a)byś wziąć udział (lub Twoje dziecko) w takim wydarzeniu?</h2>
+            <label><input type="radio" name="udzial" value="Tak" required> Tak</label>
+            <label><input type="radio" name="udzial" value="Nie"> Nie</label>
+            <label><input type="radio" name="udzial" value="Może"> Może</label>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/9.jpg" alt="Pytanie 9" onerror="console.warn('Brak IMG/9.jpg');" />
+        </div>
+      </section>
+
+      <!-- 10 -->
+      <section class="split">
+        <div class="pane pane--left">
+          <div class="box">
+            <span class="qno">10</span>
+            <h2>Co można by dodać lub zmienić w projekcie?</h2>
+            <textarea name="sugestie" placeholder="Twoja odpowiedź..."></textarea>
+            <div id="status" class="status" aria-live="polite"></div>
+            <button type="submit" class="btn btn--submit">Wyślij odpowiedzi</button>
+          </div>
+        </div>
+        <div class="pane pane--right">
+          <img src="./IMG/10.jpg" alt="Pytanie 10" onerror="console.warn('Brak IMG/10.jpg');" />
+        </div>
+      </section>
+    </form>
+  </div>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>

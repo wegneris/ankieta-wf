@@ -1,0 +1,85 @@
+:root{
+  --left-bg:#cf4f4b;
+  --left-ink:#fff;
+  --right-bg:#0f172a;
+}
+
+*{box-sizing:border-box}
+body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif; background:#f3f4f6; color:#0f172a}
+.wrap{max-width:1200px; margin:24px auto; padding:0 16px}
+
+.split{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:0;
+  border-radius:18px;
+  overflow:hidden;
+  margin-bottom:18px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+/* lewy panel */
+.pane--left{ background:var(--left-bg); color:var(--left-ink); display:flex; }
+.pane--left .box{ padding:26px; width:100%; }
+.logo{
+  width:140px; height:84px; border-radius:12px; object-fit:cover;
+  display:block; margin-bottom:14px; box-shadow:0 4px 12px rgba(0,0,0,.18);
+}
+h1{font-size:42px; margin:0 0 10px}
+.lead{margin:0 0 18px; opacity:.95}
+.btn{
+  display:inline-block; padding:12px 18px; border-radius:12px; background:#7f1d1d; color:#fff;
+  text-decoration:none; font-weight:700;
+}
+.btn:hover{ filter:brightness(1.05) }
+.secure-note{ margin-top:10px; opacity:.8 }
+
+/* pytania */
+.qno{ display:inline-block; font-weight:700; margin-bottom:8px; opacity:.9 }
+h2{ margin:8px 0 12px; font-size:22px }
+label{
+  display:block; background:rgba(255,255,255,.08); padding:10px 12px; border-radius:12px; margin:8px 0;
+}
+label:hover{ background:rgba(255,255,255,.14) }
+.inline{ display:flex; gap:10px; align-items:center; }
+.inline input[type="text"]{ flex:1; padding:10px; border-radius:10px; border:0; }
+input[type="radio"],input[type="checkbox"]{ width:18px; height:18px; accent-color:#fff; }
+.req{ color:#ffd1d1 }
+textarea{
+  width:100%; min-height:120px; border-radius:12px; border:0; padding:12px;
+  background:rgba(255,255,255,.12); color:#fff;
+}
+
+/* prawy panel ze zdjęciem */
+.pane--right{ background:var(--right-bg); position:relative; min-height:280px }
+.pane--right img{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center;
+  display:block;
+}
+
+/* status + submit */
+.status{ display:none; margin:12px 0; padding:10px 12px; border-radius:10px; background:rgba(255,255,255,.14) }
+.status.ok{ display:block; background:rgba(34,197,94,.18) }
+.status.err{ display:block; background:rgba(239,68,68,.18) }
+.btn--submit{ background:#6b1a1a; width:100%; margin-top:8px }
+
+/* blokada startowa */
+.form.locked{ pointer-events:auto; } /* formularz nie reaguje na kliknięcia na lewym panelu, ale obrazki się renderują */
+.form.locked input,
+.form.locked textarea,
+.form.locked button{ pointer-events:none; } /* blokujemy same kontrolki */
+.form.locked{ opacity:.85; filter:grayscale(.08) }
+
+/* pole imienia */
+.start-name-label{ display:block; margin-bottom:16px; font-weight:600; font-size:16px; }
+.start-name-label input{
+  width:100%; padding:10px; border-radius:10px; border:none; margin-top:6px; font-size:16px;
+}
+.name-error{ color:#ffcccc; font-size:14px; margin-bottom:10px; display:none; }
+
+/* RWD */
+@media (max-width: 900px){
+  .split{ grid-template-columns: 1fr; }
+  .pane--right{ order:-1; height:240px; }
+  h1{font-size:32px}
+}
