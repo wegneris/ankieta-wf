@@ -5,7 +5,7 @@
   --ink:#0f172a;
 }
 
-/* animowane, delikatne tło */
+/* animowane tło */
 .bg-anim{
   position: fixed; inset: -20vmax; z-index:-1;
   background: radial-gradient(60vmax 60vmax at 10% 20%, #ffd6d6 0%, transparent 60%),
@@ -32,7 +32,7 @@ body{margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-se
 .progress-bar{ height:8px; width:0; background:linear-gradient(90deg,#111,#555); border-radius:8px; transition:width .4s ease }
 .progress-label{ font-size:12px; color:#475569; margin-top:6px; text-align:right }
 
-/* bloki */
+/* bloki + reveal */
 .split{
   display:grid; grid-template-columns:1fr 1fr; gap:0;
   border-radius:18px; overflow:hidden; margin-bottom:18px;
@@ -78,14 +78,14 @@ label.choice{
 label.choice:hover{ background:#e7e7e7 }
 label.choice:active{ transform: scale(.99) }
 
-/* PO ZAZNACZENIU – zostaje czarne */
+/* po zaznaczeniu – czarne */
 label.choice:has(input:checked){
   background:#000 !important; color:#fff !important;
   transform: scale(1.02);
   box-shadow: 0 6px 18px rgba(0,0,0,.25);
 }
 
-/* mikroanimacja „pop” po wyborze (dodawana z JS) */
+/* mikro-„pop” (dodawany z JS) */
 label.choice.pop{ animation: pop .22s ease }
 @keyframes pop{ 0%{transform:scale(1)} 50%{transform:scale(1.04)} 100%{transform:scale(1.02)} }
 
@@ -93,7 +93,7 @@ label.choice.pop{ animation: pop .22s ease }
 input[type="radio"]:checked,
 input[type="checkbox"]:checked{ accent-color:#000 }
 
-/* pola tekstowe */
+/* inputy tekstowe */
 label.inline{ display:flex; gap:10px; align-items:center }
 label.inline input[type="text"]{ flex:1; padding:10px; border-radius:8px; border:none; font-size:16px }
 textarea{ width:100%; min-height:120px; border-radius:12px; border:none; padding:12px; font-size:16px; resize:vertical }
@@ -104,7 +104,7 @@ textarea{ width:100%; min-height:120px; border-radius:12px; border:none; padding
 .status.err{ display:block; background:rgba(239,68,68,.18) }
 .btn--submit{ background:#111; width:100%; margin-top:8px }
 
-/* blokada startowa */
+/* bramka startowa */
 .form.locked{ pointer-events:auto; opacity:.85; filter:grayscale(.08) }
 .form.locked input, .form.locked textarea, .form.locked button{ pointer-events:none }
 
