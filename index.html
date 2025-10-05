@@ -2,32 +2,29 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ankieta – WF z Mistrzem</title>
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- 🌟 Animowane tło -->
+  <!-- Animowane tło -->
   <div class="bg-anim" aria-hidden="true"></div>
 
   <div class="wrap">
-    <!-- 📊 Pasek postępu -->
+    <!-- Pasek postępu -->
     <div class="progress-wrap" aria-hidden="true">
       <div class="progress-bar" id="progressBar"></div>
       <div class="progress-label"><span id="progressText">0%</span> ukończono</div>
     </div>
 
-    <!-- 🟩 EKRAN STARTOWY (przywrócony!) -->
+    <!-- EKRAN STARTOWY -->
     <section class="split reveal start-screen" id="startScreen">
       <div class="pane pane--left">
         <div class="box">
           <img class="logo" src="./IMG/12.png" alt="WF z Mistrzem – logo" />
           <h1>WF z Mistrzem</h1>
-          <p class="lead">
-            Szanowni Państwo, prosimy o poświęcenie kilku minut na wypełnienie poniższej ankiety.
-          </p>
+          <p class="lead">Szanowni Państwo, prosimy o poświęcenie kilku minut na wypełnienie poniższej ankiety.</p>
 
-          <!-- Imię przed startem -->
           <label class="start-name-label">
             Twoje imię: <span class="req">*</span>
             <input type="text" id="userName" name="user_name" placeholder="Wpisz swoje imię..." required />
@@ -43,18 +40,19 @@
       </div>
     </section>
 
-    <!-- 📋 FORMULARZ -->
+    <!-- FORMULARZ (odblokuje się po kliknięciu „Zacząć”) -->
     <form id="ankieta" class="form locked" action="https://formspree.io/f/xjkaornw" method="POST">
       <input type="hidden" name="formularz" value="Ankieta – WF z Mistrzem" />
       <input type="hidden" name="timestamp" id="ts_input" />
       <input type="hidden" name="imie" id="hiddenName" />
 
-      <!-- 🧠 PYTANIE 1 -->
+      <!-- 1 -->
       <section class="split reveal" data-q="1">
         <div class="pane pane--left">
           <div class="box">
             <span class="qno">1</span>
             <h2>Kim jesteś? <span class="req">*</span></h2>
+
             <label class="choice"><input type="radio" name="rola" value="Uczeń / uczennica" required> Uczeń / uczennica</label>
             <label class="choice"><input type="radio" name="rola" value="Rodzic / opiekun"> Rodzic / opiekun</label>
             <label class="choice"><input type="radio" name="rola" value="Nauczyciel / trener"> Nauczyciel / trener</label>
@@ -70,7 +68,7 @@
         </div>
       </section>
 
-      <!-- 🧠 PYTANIE 2 -->
+      <!-- 2 -->
       <section class="split reveal" data-q="2">
         <div class="pane pane--left">
           <div class="box">
@@ -236,4 +234,5 @@
   <script src="./script.js" defer></script>
 </body>
 </html>
+
 
