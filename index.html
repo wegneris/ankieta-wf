@@ -7,24 +7,27 @@
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
-  <!-- delikatne animowane tło -->
+  <!-- 🌟 Animowane tło -->
   <div class="bg-anim" aria-hidden="true"></div>
 
   <div class="wrap">
-    <!-- pasek postępu -->
+    <!-- 📊 Pasek postępu -->
     <div class="progress-wrap" aria-hidden="true">
       <div class="progress-bar" id="progressBar"></div>
       <div class="progress-label"><span id="progressText">0%</span> ukończono</div>
     </div>
 
-    <!-- EKRAN STARTOWY -->
-    <section class="split reveal">
+    <!-- 🟩 EKRAN STARTOWY (przywrócony!) -->
+    <section class="split reveal start-screen" id="startScreen">
       <div class="pane pane--left">
         <div class="box">
           <img class="logo" src="./IMG/12.png" alt="WF z Mistrzem – logo" />
           <h1>WF z Mistrzem</h1>
-          <p class="lead">Szanowni Państwo, prosimy o poświęcenie kilku minut na wypełnienie poniższej ankiety.</p>
+          <p class="lead">
+            Szanowni Państwo, prosimy o poświęcenie kilku minut na wypełnienie poniższej ankiety.
+          </p>
 
+          <!-- Imię przed startem -->
           <label class="start-name-label">
             Twoje imię: <span class="req">*</span>
             <input type="text" id="userName" name="user_name" placeholder="Wpisz swoje imię..." required />
@@ -32,7 +35,7 @@
           <div id="nameError" class="name-error"></div>
 
           <a href="#ankieta" class="btn start-btn" id="startBtn">Zacząć</a>
-          <div class="secure-note">🔒 Secured</div>
+          <div class="secure-note">🔒 Twoje dane są bezpieczne</div>
         </div>
       </div>
       <div class="pane pane--right">
@@ -40,13 +43,13 @@
       </div>
     </section>
 
-    <!-- FORMULARZ -->
+    <!-- 📋 FORMULARZ -->
     <form id="ankieta" class="form locked" action="https://formspree.io/f/xjkaornw" method="POST">
       <input type="hidden" name="formularz" value="Ankieta – WF z Mistrzem" />
       <input type="hidden" name="timestamp" id="ts_input" />
       <input type="hidden" name="imie" id="hiddenName" />
 
-      <!-- 1 -->
+      <!-- 🧠 PYTANIE 1 -->
       <section class="split reveal" data-q="1">
         <div class="pane pane--left">
           <div class="box">
@@ -67,7 +70,7 @@
         </div>
       </section>
 
-      <!-- 2 -->
+      <!-- 🧠 PYTANIE 2 -->
       <section class="split reveal" data-q="2">
         <div class="pane pane--left">
           <div class="box">
@@ -233,3 +236,4 @@
   <script src="./script.js" defer></script>
 </body>
 </html>
+
