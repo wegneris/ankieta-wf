@@ -1,4 +1,4 @@
-/* BRAMKA STARTOWA – imię wymagane przed startem + scroll do formularza */
+/* bramka startowa (wymagane imię) */
 (function initGate(){
   const form = document.getElementById('ankieta');
   const startBtn = document.getElementById('startBtn');
@@ -6,6 +6,7 @@
   const hiddenName = document.getElementById('hiddenName');
   const nameError = document.getElementById('nameError');
 
+  // blokujemy tylko kontrolki, layout i zdjęcia działają
   const ctrls = form.querySelectorAll('input, textarea, button');
   ctrls.forEach(el => el.disabled = true);
 
@@ -32,14 +33,14 @@
   });
 })();
 
-/* REVEAL on scroll + Pasek postępu + Mikroanimacje wyboru */
+/* reveal on scroll + pasek postępu + mikroanimacje */
 (function (){
   const sections = Array.from(document.querySelectorAll('#ankieta .split'));
   const progressBar = document.getElementById('progressBar');
   const progressText = document.getElementById('progressText');
   const form = document.getElementById('ankieta');
 
-  // Pojawianie się sekcji
+  // ujawnianie sekcji
   const io = new IntersectionObserver((entries)=>{
     entries.forEach(e=>{
       if(e.isIntersecting){
@@ -50,13 +51,13 @@
   }, {threshold: .2});
   sections.forEach(s => io.observe(s));
 
-  // Mikroanimacje – po wyborze odpowiedzi
+  // mikroanimacja po wyborze
   form.addEventListener('change', (e)=>{
     const input = e.target;
     if (input.matches('input[type="radio"], input[type="checkbox"]')){
       const label = input.closest('label.choice');
       if (label){
-        label.classList.remove('pop'); // restart animacji
+        label.classList.remove('pop'); // restart
         void label.offsetWidth;
         label.classList.add('pop');
       }
@@ -64,40 +65,32 @@
     updateProgress();
   });
 
-  // Liczenie postępu: sekcja zaliczona jeśli ma jakikolwiek zaznaczony input/niepuste textarea
+  // postęp — sekcja zaliczona, jeśli ma jakikolwiek wybór lub treść
   function isSectionAnswered(section){
     const radios = section.querySelectorAll('input[type="radio"]');
-    const checkboxes = section.querySelectorAll('input[type="checkbox"]');
-    const textareas = section.querySelectorAll('textarea, input[type="text"]');
+    const byName = {};
+    radios.forEach(r => { (byName[r.name] ||= []).push(r); });
+    const anyRadioGroupChecked = Object.values(byName).some(group => group.some(r=>r.checked));
 
-    const anyRadioNameChecked = (() => {
-      const byName = {};
-      radios.forEach(r => {
-        byName[r.name] ||= [];
-        byName[r.name].push(r);
-      });
-      return Object.values(byName).some(group => group.some(r => r.checked));
-    })();
+    const anyCheckboxChecked = section.querySelector('input[type="checkbox"]:checked');
+    const anyText = Array.from(section.querySelectorAll('textarea, input[type="text"]'))
+      .some(t => (t.value||'').trim().length>0);
 
-    const anyCheckboxChecked = Array.from(checkboxes).some(c => c.checked);
-    const anyTextFilled = Array.from(textareas).some(t => (t.value || '').trim().length > 0);
-
-    return anyRadioNameChecked || anyCheckboxChecked || anyTextFilled;
+    return anyRadioGroupChecked || !!anyCheckboxChecked || anyText;
   }
 
   function updateProgress(){
     const total = sections.length;
     const answered = sections.filter(isSectionAnswered).length;
-    const pct = Math.round((answered / total) * 100);
-    progressBar.style.width = `${pct}%`;
-    progressText.textContent = `${pct}%`;
+    const pct = Math.round((answered/total)*100);
+    progressBar.style.width = pct + '%';
+    progressText.textContent = pct + '%';
   }
 
-  // pierwsze przeliczenie
   updateProgress();
 })();
 
-/* WYSYŁKA DO FORMSPREE + STATUS + EKRAN DZIĘKUJEMY z konfetti */
+/* wysyłka + ekran podziękowania z konfetti */
 (function () {
   const form = document.getElementById('ankieta');
   const statusEl = document.getElementById('status');
@@ -132,7 +125,6 @@
       });
 
       if (res.ok) {
-        // Ekran podziękowania z konfetti
         showThanks();
         form.reset();
       } else {
@@ -152,10 +144,9 @@
   });
 
   function showThanks(){
-    // Konfetti
     const confettiWrap = thanks.querySelector('.confetti');
     confettiWrap.innerHTML = '';
-    const COLORS = ['#111', '#222', '#444', '#666', '#999', '#000'];
+    const COLORS = ['#111','#222','#444','#666','#999','#000'];
     const COUNT = 120;
     for (let i=0;i<COUNT;i++){
       const piece = document.createElement('i');
@@ -166,9 +157,7 @@
       confettiWrap.appendChild(piece);
     }
     thanks.classList.remove('hidden');
-    // przycisk w kartce
-    const btn = thanks.querySelector('.btn');
-    btn.addEventListener('click', (e)=>{
+    thanks.querySelector('.btn').addEventListener('click', (e)=>{
       e.preventDefault();
       thanks.classList.add('hidden');
       window.scrollTo({top:0, behavior:'smooth'});
